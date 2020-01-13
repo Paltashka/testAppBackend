@@ -15,15 +15,15 @@ const tableRowSchema = new Schema({
         required: true,
         minlength: 2,
         maxlength: 30,
-        // match: /^([^0-9]*)$/
+        match: /^([^0-9]*)$/
     },
     email: {
         type: String,
         required: true,
         minlength: 5,
         maxlength: 30,
-        unique: true
-        // match: ^([a-zA-Z0-9_\\-\\.]+)@([a-zA-Z0-9_\\-\\.]+)\\.([a-zA-Z]{2,5})$
+        unique: true,
+        match: /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/
     }
 });
 
