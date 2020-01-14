@@ -1,9 +1,13 @@
+const mongoose = require("mongoose");
+
+const {tableRowSchema} = require('../../database/models');
+
 module.exports = (req, res) => {
-    const collection = req.app.locals.tableCollection;
+    const tableRowModel = mongoose.model("tables", tableRowSchema);
 
-    collection.find({}).toArray((err, tableRows) => {
-        if (err) res.status(400).send({msg: `Can't return table rows: ${err}`});
+    tableRowModel.find({}, (err, tableRows) => {
+        if (err) return res.status(400).send({msg: `Can't return table rows: ${err}`});
 
-        res.status(200).send({msg: "Table rows successfully returned", tableRows});
+        res.status(200).send({msg: "Table rows successfully returned", result: tableRows});
     });
 };
