@@ -4,6 +4,7 @@
   "description": "",
   "main": "App.js",
   "scripts": {
+    "prestart": "mongod --fork --logpath /dev/null",
     "start": "node App.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
