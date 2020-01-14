@@ -10,7 +10,7 @@ router.post('/',
     tableController.insertRow
 );
 
-router.put('/',
+router.put('/:id',
     tableController.updateRow
 );
 
