@@ -23,7 +23,7 @@ const tableRowSchema = new Schema({
         minlength: 5,
         maxlength: 30,
         unique: true,
-        match: /^\w+@[a-zA-Z_]+?\./
+        match: /^\w+@[a-zA-Z_]+?/
     }
 });
 
