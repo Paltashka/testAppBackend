@@ -6,7 +6,7 @@ const {tableRowSchema} = require('../../database/models');
 module.exports = (req, res) => {
     if(!req.body) return res.status(400);
 
-    const id = new objectId(req.body.id);
+    const id = new objectId(req.params.id);
 
     const tableRowModel = mongoose.model("tables", tableRowSchema);
 

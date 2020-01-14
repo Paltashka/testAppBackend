@@ -14,7 +14,7 @@ router.put('/',
     tableController.updateRow
 );
 
-router.delete('/',
+router.delete('/:id',
     tableController.deleteRow
 );
 
